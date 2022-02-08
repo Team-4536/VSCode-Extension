@@ -1,8 +1,9 @@
 {
 	"name": "4536",
-	"displayName": "4536",
+	"displayName": "4536 wpilib extensions",
 	"description": "Misc ext help for Team 4536",
 	"version": "0.1.0",
+	"license": "SEE LICENSE IN License.MD",
 	"icon": "images/icon.png",
 	"engines": {
 		"vscode": "^1.63.2"
@@ -42,5 +43,10 @@
 		"mocha": "^9.1.3",
 		"typescript": "^4.5.4",
 		"@vscode/test-electron": "^2.0.3"
-	}
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Team-4536/VSCode-Extension.git"
+	},
+	"homepage": "https://github.com/Team-4536/VSCode-Extension/blob/main/README.md"
 }
