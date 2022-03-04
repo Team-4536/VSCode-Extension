@@ -54,7 +54,6 @@ export function activate(context: vscode.ExtensionContext) {
 		var terminal = vscode.window.createTerminal(`Git Pruning Local Branches FULLY`);
 		terminal.show();
 		terminal.sendText("git checkout master -f");
-		terminal.sendText("git fetch --prune");
 		terminal.sendText("git branch -l | ?{-not($_ -match 'master' )} | %{git branch -D $_}");
 	});
 	context.subscriptions.push(disposable);
