@@ -37,13 +37,28 @@ export function activate(context: vscode.ExtensionContext) {
 		// The code you place here will be executed every time your command is executed
 		var terminal = vscode.window.createTerminal(`Git Pruning Local Branches`);
 		terminal.show();
-		terminal.sendText("git checkout master");
+		terminal.sendText("git checkout master -f");
 		terminal.sendText("git fetch --prune");
 		terminal.sendText("git branch -l| %{$_.Trim()}| ?{-not ((git branch -r) -like '*' + $_) }| ?{-not($_ -match 'master' )} | %{git branch -d $_}");
 	});
-	
-
+	let disposableFully = vscode.commands.registerCommand('4536.gitPruneLocalBranchesFull', () => {
+		// The code you place here will be executed every time your command is executed
+		var terminal = vscode.window.createTerminal(`Git Pruning Local Branches FULLY`);
+		terminal.show();
+		terminal.sendText("git checkout master -f");
+		terminal.sendText("git fetch --prune");
+		terminal.sendText("git branch -l| %{$_.Trim()}| ?{-not ((git branch -r) -like '*' + $_) }| ?{-not($_ -match 'master' )} | %{git branch -D $_}");
+	});	
+	let disposableAll = vscode.commands.registerCommand('4536.gitDeleteAllLocalBranches', () => {
+		// The code you place here will be executed every time your command is executed
+		var terminal = vscode.window.createTerminal(`Git Pruning Local Branches FULLY`);
+		terminal.show();
+		terminal.sendText("git checkout master -f");
+		terminal.sendText("git fetch --prune");
+		terminal.sendText("git branch -l | ?{-not($_ -match 'master' )} | %{git branch -D $_}");
+	});
 	context.subscriptions.push(disposable);
+	context.subscriptions.push(disposableFully);
 }
 
 // this method is called when your extension is deactivated

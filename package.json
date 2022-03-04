@@ -2,9 +2,8 @@
 	"name": "4536",
 	"displayName": "4536 wpilib extensions",
 	"description": "Misc ext help for Team 4536",
-	"version": "0.1.0",
+	"version": "0.1.3",
 	"license": "SEE LICENSE IN License.MD",
-	"icon": "images/icon.png",
 	"engines": {
 		"vscode": "^1.63.2"
 	},
@@ -12,7 +11,8 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:4536.gitPruneLocalBranches"
+		"onCommand:4536.gitPruneLocalBranches",
+		"onCommand:4536.gitPruneLocalBranchesFull"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
@@ -20,7 +20,15 @@
 			{
 				"command": "4536.gitPruneLocalBranches",
 				"title": "4536: Git Prune Local Branches"
-			}
+			},
+			{
+				"command": "4536.gitPruneLocalBranchesFull",
+				"title": "4536: Git Prune Local Branches FULLY"
+			},
+			{
+				"command": "4536.gitDeleteAllLocalBranches",
+				"title": "4536: Git Delete All Local Branches (except master)"
+			}	
 		]
 	},
 	"scripts": {
