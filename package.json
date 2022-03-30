@@ -2,7 +2,7 @@
 	"name": "4536",
 	"displayName": "4536 wpilib extensions",
 	"description": "Misc ext help for Team 4536",
-	"version": "0.1.3",
+	"version": "0.1.5",
 	"license": "SEE LICENSE IN License.MD",
 	"engines": {
 		"vscode": "^1.63.2"
@@ -10,9 +10,11 @@
 	"categories": [
 		"Other"
 	],
+    "icon": "src/images/icon.png",
 	"activationEvents": [
 		"onCommand:4536.gitPruneLocalBranches",
-		"onCommand:4536.gitPruneLocalBranchesFull"
+		"onCommand:4536.gitPruneLocalBranchesFull",
+		"onCommand:4536.gitDeleteAllLocalBranches"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
